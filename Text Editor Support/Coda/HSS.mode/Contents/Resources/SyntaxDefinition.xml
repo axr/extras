@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE syntax SYSTEM "syntax.dtd">
+
+<syntax>
+    <head>
+        <name>HSS</name>
+        <!-- The definitions title -->
+        <charsintokens>_0987654321abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@</charsintokens>
+        <charsincompletion>_0987654321abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-@</charsincompletion>
+    </head>
+    <states>
+        <default id="Base" color="#000" background-color="#fff" font-weight="normal" font-style="normal">
+            <state id="Inside curly brackets" color="#000" background-color="#fff" font-weight="normal" font-style="normal">
+                <begin>
+                    <string>{</string>
+                </begin>
+                <end>
+                    <regex>}</regex>
+                </end>
+                <keywords id="HSS Keywords" color="#88134F" font-style="normal" useforautocomplete="yes">
+					<regex>(?&lt;![\d\w])(?i)(width(?:-[\w]+)*)</regex>
+					<regex>(?&lt;![\d\w])(?i)(height(?:-[\w]+)*)</regex>
+           	        <regex>(?&lt;![\d\w])(?i)(background(?:-[\w]+)*)</regex>
+           	        <regex>(?&lt;![\d\w])(?i)(isA(?:-[\w]+)*)</regex>
+					<regex>(?&lt;![\d\w])(?i)(alignX(?:-[\w]+)*)</regex>
+					<regex>(?&lt;![\d\w])(?i)(alignY(?:-[\w]+)*)</regex>
+					<regex>(?&lt;![\d\w])(?i)(direction(?:-[\w]+)*)</regex>
+
+                </keywords>
+                <state id="Attribute state" color="#000" background-color="#fff" font-weight="normal" font-style="normal">
+                    <begin>
+                        <string>:</string>
+                    </begin>
+                    <end>
+                        <regex>(;|.(?=})|[\n\r])</regex>
+                    </end>
+                    <keywords id="HSS Attributes" font-style="normal" color="#9B4400" useforautocomplete="yes">
+    
+                        <regex>(?i)(100)</regex>
+                        <regex>(?i)(200)</regex>
+                        <regex>(?i)(300)</regex>
+                        <regex>(?i)(400)</regex>
+                        <regex>(?i)(500)</regex>
+
+                    </keywords>
+                    <keywords id="HSS Digits" color="#00f" font-style="normal" useforautocomplete="yes">
+                        <regex>(?&lt;![#\d\w-])(-?[\d]+[ \t]*(?:px|%)?)</regex>
+                    </keywords>
+                    <keywords id="HSS Colors" color="#760f15" font-style="normal" useforautocomplete="yes">
+                        <regex>(#[\da-fA-F]{1,8})</regex>
+                    </keywords>
+                    <state-link state="AutodocComment"/>
+                    <state-link state="Comment"/>
+                    <state-link state="String"/>
+                    <state-link state="SingleString"/>
+                    <state-link state="URL"/>
+                    <!--<state-link state="Round bracket"/>-->
+                </state>
+                <state-link state="AutodocComment"/>
+                <state-link state="Comment"/>
+                <state-link state="String"/>
+                <state-link state="SingleString"/>
+				<state-link state="URL"/>
+              <!--  <state-link state="Round bracket"/>-->
+            </state>
+            
+            <state id="AutodocComment" type="comment" color="#236E25" font-weight="normal" font-style="italic">
+                <begin>
+                    <string>/\*"</string>
+                </begin>
+                <end>
+                    <regex>"\*/</regex>
+                </end>
+            </state>
+            <state id="Comment" type="comment" color="#236E25" font-weight="normal" font-style="italic">
+                <begin>
+                    <string>/\*</string>
+                </begin>
+                <end>
+                    <regex>\*/</regex>
+                </end>
+            </state>
+            <!--<state id="URL" type="string" color="#760f15" font-weight="normal" font-style="normal">
+                <begin>
+                    <string>(?&lt;=[Uu][Rr][Ll])\s*\(</string>
+                </begin>
+                <end>
+                    <regex>\)</regex>
+                </end>
+            </state>-->
+            <state id="String" type="string" color="#760f15" font-weight="normal" font-style="normal">
+                <begin>
+                    <string>"</string>
+                </begin>
+                <end>
+                    <regex>(((?&lt;!\\)(\\\\)*)|^)"</regex>
+                </end>
+            </state>
+            <state id="SingleString" type="string" color="#760f15" font-weight="normal" font-style="normal">
+                <begin>
+                    <string>'</string>
+                </begin>
+                <end>
+                    <regex>(((?&lt;!\\)(\\\\)*)|^)'</regex>
+                </end>
+            </state>
+        </default>
+    </states>
+</syntax>
