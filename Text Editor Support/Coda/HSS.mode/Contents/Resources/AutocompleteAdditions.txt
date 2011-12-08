@@ -1,0 +1,8 @@
+background
+border
+corners
+direction
+height
+margin
+size
+width

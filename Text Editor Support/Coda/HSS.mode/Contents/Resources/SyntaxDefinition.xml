@@ -53,14 +53,12 @@
                     <state-link state="Comment"/>
                     <state-link state="String"/>
                     <state-link state="SingleString"/>
-                    <state-link state="URL"/>
                     <!--<state-link state="Round bracket"/>-->
                 </state>
                 <state-link state="AutodocComment"/>
                 <state-link state="Comment"/>
                 <state-link state="String"/>
                 <state-link state="SingleString"/>
-				<state-link state="URL"/>
               <!--  <state-link state="Round bracket"/>-->
             </state>
             
@@ -80,14 +78,6 @@
                     <regex>\*/</regex>
                 </end>
             </state>
-            <!--<state id="URL" type="string" color="#760f15" font-weight="normal" font-style="normal">
-                <begin>
-                    <string>(?&lt;=[Uu][Rr][Ll])\s*\(</string>
-                </begin>
-                <end>
-                    <regex>\)</regex>
-                </end>
-            </state>-->
             <state id="String" type="string" color="#760f15" font-weight="normal" font-style="normal">
                 <begin>
                     <string>"</string>
