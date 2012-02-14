@@ -1,0 +1,36 @@
+@linearGradient bgGradient
+{
+    startColor: #EDEDDD;
+    endColor: #F;
+    endY: 100%;
+}
+
+@lineBorder boxBorder
+{
+    size: 1;
+    color: #C;
+}
+
+@container box
+{
+    background: #F;
+    shape: @roundedRect { corners: 5 };
+    width: 100% - 50;
+    height: 35;
+    contentAlignY: middle;
+    anchorY: 0;
+    border: boxBorder;
+    padding: 10; //FIXME: this is not recognized, yet
+}
+
+* {
+    background: bgGradient;
+    contentAlignY: distribute; //FIXME: this is not recognized, yet
+    
+    * { isA: box; }
+    message
+    {
+        height: 100% - 130;
+        contentAlignY: 0;
+    }
+}

@@ -1,0 +1,11 @@
+example
+{
+    background: #ED;
+    textAlign: center;
+    contentAlignY: middle;
+    font: @{
+        face: "Impact";
+        size: 40;
+        color: #C;
+    };
+}

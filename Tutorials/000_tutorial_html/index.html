@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- <link rel="stylesheet" href="../css/style.css" /> -->
+</head>
+<body>
+  <div id="container">
+    <header></header>
+    <div id="main" role="main">
+		<section class="introduction">
+			<h2>1 Introduction</h2>
+			<p>HSS is the design language that powers the presentational side of a document written for the AXR platform. It's syntax is inspired in CSS, but it takes the concept to a whole new level, providing many new features that enable newfound flexibility and power.</p>
+			<p>It was invented by Miro Keller in 2009 and has been evolving since then. The idea started as a small superset of CSS, but it became clear to the author that a fresh start would be required because the burden of legacy compatibility was too high to create a really great language. Thus, the AXR Project was started.</p>
+		</section>
+		<section class="set_up">
+			<h2>2 Set-up of the environment</h2>
+			<p>At the time of writing this tutorial, the prototype rendering engine is capable of handling all the concepts we are going to explore, but it is not available as a browser plug-in, yet. Thus, you need to download the prototype for your specific platform from the <a href="http://axr.vg/">project page</a>, and open XML files located on your local computer.</p>
+			<p>//FIXME: add instructions on how to install the prototype</p>
+			<p>Next, you should create a folder somewhere you can remember, and create the text files that we are going to discuss in these tutorials. The best way is to manually type the things in yourself, instead of copying and pasting, because that way you'll learn much more and you'll be much less prone to overlooking details of the syntax.</p>
+			<p>For the sake of simplicity, I'll just use paths that start with a slash as if the files were located in the root of your hard-drive. Please prepend them with what's missing. Say, for example that I put my files in a new folder on the desktop, called tutorials. Whenever I see <code>/index.xml</code> in the tutorial, the actual path to that file would be <code>/Users/myuser/Desktop/tutorials/index.xml</code>, since I am on a Unix-like system.</p>
+			<p>Configure your text editor to use the UTF-8 encoding, either at the time of the file creation or in a setting in your application's settings. This encoding is the official recommended one to use.</p>
+		</section>
+		<section class="hello_world">
+			<h2>3 Hello world</h2>
+			<p>The first thing we'll do, to follow the tradition of all programming languages, is creating the most basic file possible, which gives a basic output.</p>
+			<h3>3.1 Let's rock!</h3>
+			<p>Open your favorite text editor, and create a new file <code>/hello_world.xml</code>. Inside it, write this:</p>
+			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;hello&gt;Hello world&lt;/hello&gt;</pre>
+			<p>Done! Now, open it in the prototype, and you'll see something like this:</p>
+			<p><img src="img/1001.jpg" alt="Prototype showing Hello world" /></p>
+			<p>Let's go over each line:</p>
+			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</pre>
+			<p>This is an XML instruction that needs to be present in all XML files, as per the specification (//FIXME: add link). We declare the file to use the 1.0 version of the XML standard, and that our file is encoded in the UTF-8 encoding, which is what you should always use.</p>
+			<pre>&lt;hello&gt;Hello world&lt;/hello&gt;</pre>
+			<p>The only requirement for the XML file that the AXR platform imposes is that the XML document is well-formed (//FIXME: add link), and that means, among other things, that there must be one, and only one, root element that contains all the other elements. In this case our root element is called <code>hello</code>, and it contains just some content text, <code>&quot;Hello world&quot;</code>.</p>
+			<h3>3.2 Style sheets</h3>
+			<p>Now, let's style it up a bit. For that, we need to add a line to the XML file that will determine how to find the stylesheet that will contain the instructions on how to represent the content of the XML file:</p>
+			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;?xml-stylesheet src=&quot;style.hss&quot; type=&quot;application/x-hss&quot; version=&quot;1.0&quot;?&gt;
+&lt;example&gt;Hello world&lt;/example&gt;</pre>
+			<p>Here's what we added:</p>
+			<pre>&lt;?xml-stylesheet src=&quot;style.hss&quot; type=&quot;application/x-hss&quot; version=&quot;1.0&quot;?&gt;</pre>
+			<p>This line is a so called <em>XML instruction</em>, and the instruction name is <code>xml-stylesheet</code>. It's arguments, <code>src</code>, <code>type</code> and <code>version</code> can come in any order.</p>
+			<ul>
+				<li><p><code>src</code> is the location of the HSS file relatively to the XML file. No absolute paths or URLs are supported yet in the prototype.</p></li>
+				<li><p><code>type</code> is the MIME type of the stylesheet. In this case, we are using <code>application/x-hss</code>, because it is not an official standard yet, and MIME rules state that you have to use the <code>x-</code> prefix for non-standard types. In the future, this may end up being <code>application/hss</code> or even <code>text/hss</code>.</p></li>
+				<li><p>Last, but not least, it is always required that you declare the <code>version</code> of the AXR platform that you are targeting. In case that the syntax changes in the future, backwards compatibility modules will be able to render old documents correctly, becaue they will know what you meant in the first place. So, for now, we will always be using <code>1.0</code>, at least until the first official version has been completed and released.</p></li>
+			</ul>
+			<p>Now, with your favorite text editor, create a new file <code>/style.hss</code>, and type this:</p>
+			<pre>example
+{
+    background: #ED;
+    textAlign: center;
+    contentAlignY: middle;
+}</pre>
+			<p>Go back to the prototype, hit refresh (cmd+R on the Mac, ctrl+R or F5 on Windows and Linux), and you should get something like this:</p>
+			<p><img src="img/1002.jpg" alt="Prototype showing styled up Hello world" /></p>
+			<p>Let's go over each part:</p>
+			<pre>example
+{
+    //more stuff here
+}</pre>
+			<p>This is what's called a <em>rule</em>. It begins with a <em>selector</em>, which points to an <em>element</em> in the XML <em>source tree</em>, which will receive whatever is defined inside of the <em>block</em> (which starts with <code>{</code> and ends with <code>}</code>).</p>
+			<pre>background: #ED;</pre>
+			<p>This is a <em>property definition</em>. First comes the <em>property name</em>, then immediately after it comes a colon, then optional whitespace, then one or more <em>values</em>, then more optional whitespace, and finally an <em>end of statement</em> (aka semicolon), which is optional when the property definition is the last thing in the rule.</p>
+			<p>In this particular line, we are setting the <code>background</code> of the <code>example</code> element to a light gray (in case, you haven't guessed it, <code>#ED</code> represents a color).</p>
+			<pre>textAlign: center;</pre>
+			<p>Here we are setting the <em>content text</em> to be center aligned, as you'd do in any text processor.</p>
+			<pre>contentAlignY: middle;</pre>
+			<p>And finally, here comes a small taste of the magic of HSS. How many times have you wanted to do this with CSS? You set the content of the <code>example</code> element to be vertically aligned to the middle, which is equivalent to <code>50%</code>. We'll get to it later in more detail, but for now, know that the root element will always be as wide and tall as the window.</p>
+			<h3>3.3 Final touch</h3>
+			<p>To wrap up this segment, let's change the font of the text. We are going to use what's called an <em>object definition</em>, which will be explained more in depth in further chapters. For now, just copy along. Add the following lines to the block:</p>
+			<pre>font: @{
+    face: "Impact";
+    size: 40;
+    color: #C;
+};</pre>
+			<p>The entire file <code>/style.hss</code> now looks like this:</p>
+			<pre>example
+{
+    background: #ED;
+    textAlign: center;
+    contentAlignY: middle;
+    font: @{
+        face: "Impact";
+        size: 40;
+        color: #C;
+    };
+}</pre>
+			<p>If you reload in the prototype, you should get something like this:</p>
+			<p><img src="img/1003.jpg" alt="Prototype showing the final Hello world example" /></p>
+			<p>You can recognize a HSS object by the <code>@</code>, which is called the <em>object sign</em>. Its block contains property definitions, like normal rules do. In this concrete example, the properties <code>face</code>, <code>size</code> and <code>color</code> are the ones we use because we are defining a <code>@font</code> object, which is the default <em>object type</em> for the <code>font</code> property.</p>
+			<p>If you didn't fully understand what's going on, don't worry. It will become much clearer as we dive into the full syntax of objects and how to use them.</p>
+		</section>
+		<section class="selectors">
+			<h2>4 The basics</h2>
+			<h3>4.1 Selectors</h3>
+			<p><em>Selectors</em> point to the <em>elements</em> in your XML file, to tell the rendering engine which properties to apply to which object. Create a new text file <code>/basics.xml</code> and type the following:</p>
+			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;?xml-stylesheet src=&quot;basics.hss&quot; type=&quot;application/x-hss&quot; version=&quot;1.0&quot;?&gt;
+&lt;example&gt;
+	&lt;sibling&gt;Element A&lt;/sibling&gt;
+	&lt;sibling&gt;Element B&lt;/sibling&gt;
+&lt;/example&gt;</pre>
+			<p>This basic XML file contains a <em>root element</em> called <code>example</code>, which contains two <em>children elements</em>, called <code>sibling</code>, which in turn contain <code>"Element A"</code> and <code>"Element B"</code> as <em>content text</em>.</p>
+			<p>Create the HSS file: <code>/basics.hss</code>, containing the following:</p>
+			<pre>* {
+	background: #D;
+}</pre>
+			<p>If you went trough the last tutorial you can probably guess that this is a rule, and that what's inside the block applies a gray background. The difference is that instead of targeting the root element with its <em>name</em>, we are using the <em>universal selector</em>, the star <code>*</code>. Open the <code>/basics.xml</code> file with the prototype and you should see something like the following:</p>
+			<p><img src="img/2001.jpg" alt="The whole window is filled with gray, plus some basic text" /></p>
+			<h3>4.2 Scope and nesting</h3>
+			<p>If you are familiar with CSS, you may think that this applies to all elements in the XML source. There is a crucial difference in HSS, and that is the notion of <em>scope</em>. In the example, only the root element will be selected, because we always start at <em>root scope</em>. To select elements further down the <em>document tree</em>, you need to use <em>nesting</em> or <em>combinators</em> (these will be explored later). The scope restricts what will be selected, and which elements are said to be <em>in scope</em> depends on where in your HSS file you use a given selector.</p>
+			<p>In HSS you can put rules inside other rules, this is what's called <em>nesting</em>. Change your <code>/basics.hss</code> file to look like this:</p>
+			<pre>* {
+    background: #D;
+
+    sibling
+    {
+        width: 100;
+        height: 100;
+        alignY: middle;
+        contentAlignY: middle;
+        textAlign: center;
+        background: #0003;
+        border: @{
+            size: 1;
+            color: #7;
+        };
+    }
+}</pre>
+            <p>Reload the file and you should see something like this:</p>
+            <p><img src="img/2002.jpg" alt="The children are squares and placed next to each other" /></p>
+            <p>Here's what we added:</p>
+            <pre>sibling
+{
+    width: 100;
+    height: 100;
+    alignY: middle;
+    contentAlignY: middle;
+    textAlign: center;
+    background: #0003;
+    border: @{
+        size: 1;
+        color: #7;
+    };
+}</pre>
+			<p>We are selecting all the <code>sibling</code> elements inside the previously selected element, and adding some properties to be able to see them better. Only the two children of the <code>example</code> element are in scope, because we are inside the rule that selects the <code>example</code> element.</p>
+			<h3>4.3 Dissection</h3>
+			<p>Let's go over the property definitions and see what they do:</p>
+			<pre>width: 100;
+height: 100;</pre>
+            <p>Here we are setting the basic dimensions of the elements to 100 <em>points</em>. These are resolution independent units of measure, which when the <em>scale factor</em> is 1 are equal to 1 <em>screen pixel</em>. The <code>width</code> and <code>height</code> properties accept <em>numbers</em>, <em>percentage numbers</em> or the keyword <code>content</code> (plus some advanced things we won't consider right now). Anywhere numbers are accepted you can also write expressions, using common mathematical operands, such as <code>+</code>, <code>-</code>, <code>*</code> and <code>/</code>. Parentheses are also allowed, and they are very useful to group expressions.</p>
+            <p>The default value for <code>width</code> is the percentage number <code>100%</code> and for <code>height</code> it is the keyword <code>content</code>, therefore making them as wide as the parent and as tall as their content when left to their default values.</p>
+			<p>Let's experiment a bit: Change the width to 50%. Now your document should look like this:</p>
+			<p><img src="img/2003.jpg" alt="The columns take up the entire width of the window" /></p>
+			<p>Now we want to make them as tall as the window, so we set the height to 100%.</p>
+			<p><img src="img/2004.jpg" alt="The columns take up the entire height of the window" /></p>
+			<p>Maybe not completely as tall as the window. Make it 100% - 30. If you resize the window you'll see that the empty space at the top and bottom will always be 15 points each.</p>
+			<p><img src="img/2005.jpg" alt="There is a 15 points gap at the top and at the bottom" /></p>
+			<p>Just to brag, now, we're going to take it a bit to extreme! Make the width (100% - (10% + 5))/2:</p>
+			<p><img src="img/2006.jpg" alt="It works! - There is now a gap at each side, too." /></p>
+			<p>OK, this is probably overdoing it :) But this is just to show that you can use more complicated expressions without problems.</p>
+			<p>Let's go back to <code>width: 100; height: 100;</code> and then look at the next line:</p>
+			<pre>alignY: middle;</pre>
+			<p>Here we are setting the <em>alignment point</em> in the vertical axis to the keyword <code>middle</code>, which will be automatically converted to <code>50%</code>. The default value for the horizontal axis is already <code>50%</code>, that's why we didn't need to use <code>alignX</code> or <code>contentAlignX</code> on its parent to have it aligned in the middle horizontally.</p>
+			<p>If we change this to <code>top</code> or <code>0</code>, you'll see it sticks to the top:</p>
+			<p><img src="img/2007.jpg" alt="The elements are top aligned" /></p>
+			<p>If we set it to <code>bottom</code> or <code>100%</code>, it will got to the bottom:</p>
+			<p><img src="img/2008.jpg" alt="The elements are bottom aligned" /></p>
+			<p>Intermediate values are possible, as well. But before we do that, we first need to understand the concept of <em>anchor point</em>. Each object in our document has a point wich will be the reference used when positioning it on the <em>alignment point</em>. By default, <code>anchorX</code> and <code>anchorY</code> are <code>50%</code> of their width and height, respectively.</p>
+			
+			
+            <!-- <p>Let's add some more elements to our XML file. Change <code>/basics.xml</code> to look like this:</p>
+            <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;?xml-stylesheet src=&quot;selectors2.hss&quot; type=&quot;application/x-hss&quot; version=&quot;1.0&quot;?&gt;
+&lt;example&gt;
+    &lt;sibling&gt;Element A&lt;/sibling&gt;
+    &lt;sibling&gt;Element B&lt;/sibling&gt;
+    &lt;parent&gt;
+        &lt;child&gt;Child element C-A&lt;/child&gt;
+        &lt;child&gt;Child element C-B&lt;/child&gt;
+    &lt;/parent&gt;
+&lt;/example&gt;</pre>
+            <h3>4.3 Objects</h3>
+            <p></p>
+             -->
+		</section>
+    </div>
+    <footer></footer>
+  </div>
+</body>
+</html>

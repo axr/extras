@@ -1,0 +1,17 @@
+* {
+    background: #D;
+
+    sibling
+    {
+        width: (100% - (10% + 5))/2;
+        height: 100% - 30;
+        alignY: middle;
+        contentAlignY: middle;
+        textAlign: center;
+        background: #0003;
+        border: @{
+            size: 1;
+            color: #7;
+        };
+    }
+}

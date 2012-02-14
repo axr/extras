@@ -1,0 +1,90 @@
+@container inset
+{
+    contentAlignY: 50%;
+    textAlign: center;
+    shape: @roundedRect{
+        corners: 10;
+    };
+    background: @linearGradient {
+        endY: 100%;
+        startColor: #B;
+        endColor: #C;
+    };
+    border: @{ 1 #9 }, @{ 1 #FFF4 };
+}
+
+example
+{
+    background: #ED;
+    
+    #new top
+    {
+        height: 100% - 150;
+        
+        #move hello
+        {
+            isA: inset;
+            width: 100% - 50;
+            height: 80%;
+            alignY: 50%;
+            font: @font { 
+                face: "Impact";
+                color: #6;
+                size: 20;
+                weight: bold;
+            };
+            border: @{ 1 #9 }, @{ 1 #F };
+        }
+    }
+    
+    #new bottom
+    {
+        height: 100% - ref(height of top);
+        contentAlignY: middle;
+        background: @linearGradient{
+            startColor: #DA;
+            endColor: #BA;
+            endY: 100%;
+        };
+        
+        #new hlTop
+        {
+            height: 1;
+            background: #F;
+            alignY: top;
+        }
+        #new shTop
+        {
+            height: 1;
+            background: #A;
+            alignY: top;
+        }
+        
+        #new shadowTop
+        {
+            height: 10;
+            background: @linearGradient{
+                startColor: #0002;
+                endColor: #0000;
+                endY: 100%;
+            };
+            alignY: top;
+        }
+        
+        #new home
+        {
+            isA: inset;
+            width: 50;
+            height: 50;
+            content: "home";
+            
+            #new homeButton
+            {
+                isA: inset;
+                width: 20;
+                height: 20;
+                shape: @{3};
+            }
+        }
+    }
+}

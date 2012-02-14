@@ -1,0 +1,6 @@
+example
+{
+    background: #ED;
+    textAlign: center;
+    contentAlignY: middle;
+}

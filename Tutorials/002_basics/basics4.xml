@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet src="basics4.hss" type="application/x-hss" version="1.0"?>
+<example>
+	<sibling>Element A</sibling>
+	<sibling>Element B</sibling>
+</example>
