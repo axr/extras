@@ -4,7 +4,7 @@
  * @author Ragnis Armus <ragnis.armus@gmail.com>
  * @license http://www.opensource.org/licenses/mit-license.html The MIT License
  */
-class Phergie_Plugin_LastSeen extends Phergie_Plugin_Abstract
+class Phergie_Plugin_Lastseen extends Phergie_Plugin_Abstract
 {
 	protected $defaultConfig = array(
 		'lastseen.datapath' => '/tmp/lastseen'
@@ -19,6 +19,45 @@ class Phergie_Plugin_LastSeen extends Phergie_Plugin_Abstract
 	public function onLoad ()
 	{
 		$this->getPluginHandler()->getPlugin('Message');
+		$this->getPluginHandler()->getPlugin('Command');
+	}
+
+	/**
+	 * Request info about user
+	 *
+	 * @param string $channel
+	 * @param string $nick
+	 * @return void
+	 */
+	public function onCommandLastseen ($channel, $nick)
+	{
+		$response = array();
+
+		if (!isset($this->data[$channel]) ||
+			!isset($this->data[$channel][$nick]) ||
+			empty($this->data[$channel][$nick]))
+		{
+			return;
+		}
+
+		$info = $this->data[$channel][$nick];
+
+		if (isset($info['online']))
+		{
+			$response[] = $nick . ' was last online at ' .
+				gmdate('Y-m-d H:i', $info['online']);
+		}
+
+		if (isset($info['privmsg']))
+		{
+			$response[] = $nick . ' last spoke at ' .
+				gmdate('Y-m-d H:i', $info['privmsg']);
+		}
+
+		foreach ($response as $line)
+		{
+			$this->doPrivmsg($channel, $line);
+		}
 	}
 
 	/**
@@ -30,40 +69,6 @@ class Phergie_Plugin_LastSeen extends Phergie_Plugin_Abstract
 	{
 		$channel = $this->getEvent()->getSource();
 		$nick = $this->event->getNick();
-		$msg = $this->plugins->message->getMessage();
-
-		if (preg_match('/^last_seen ([^ ]+)/', $msg, $match))
-		{
-			$qnick = $match[1];
-			$response = array();
-
-			if (!isset($this->data[$channel]) ||
-				!isset($this->data[$channel][$qnick]) ||
-				(
-					!isset($this->data[$channel][$qnick]['online']) &&
-					!isset($this->data[$channel][$qnick]['privmsg'])
-				))
-			{
-				return;
-			}
-
-			if (isset($this->data[$channel][$qnick]['online']))
-			{
-				$response[] = $qnick . ' was last online at ' .
-					gmdate('Y-m-d H:i', $this->data[$channel][$qnick]['online']);
-			}
-
-			if (isset($this->data[$channel][$qnick]['privmsg']))
-			{
-				$response[] = $qnick . ' last spoke at ' .
-					gmdate('Y-m-d H:i',$this->data[$channel][$qnick]['privmsg']);
-			}
-
-			foreach ($response as $line)
-			{
-				$this->doPrivmsg($channel, $line);
-			}
-		}
 
 		$this->setData($channel, $nick, 'privmsg', time());
 		$this->writeData($channel);
