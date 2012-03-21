@@ -45,13 +45,13 @@ class Phergie_Plugin_Lastseen extends Phergie_Plugin_Abstract
 		if (isset($info['online']))
 		{
 			$response[] = $nick . ' was last online at ' .
-				gmdate('Y-m-d H:i', $info['online']);
+				gmdate('Y-m-d H:i', $info['online']) . ' GMT';
 		}
 
 		if (isset($info['privmsg']))
 		{
 			$response[] = $nick . ' last spoke at ' .
-				gmdate('Y-m-d H:i', $info['privmsg']);
+				gmdate('Y-m-d H:i', $info['privmsg']) . ' GMT';
 		}
 
 		foreach ($response as $line)
