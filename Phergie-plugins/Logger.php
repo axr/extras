@@ -10,6 +10,8 @@ class Phergie_Plugin_Logger extends Phergie_Plugin_Abstract
 	protected $defaultConfig = array(
 		'logger.path' => '/tmp/logger',
 		'logger.format.entry' => '{DATE} <{NICK}> {MSG}',
+		'logger.format.notice' => '{DATE} Notice({NICK}): {MSG}',
+		'logger.format.topic' => '{DATE} {NICK} changed the topic to "{TOPIC}"',
 		'logger.format.quit' => '{DATE} {NICK} has just quit',
 		'logger.format.join' => '{DATE} {NICK} has just joined',
 		'logger.format.kick' => '{DATE} {NICK} was kicked',
@@ -52,7 +54,7 @@ class Phergie_Plugin_Logger extends Phergie_Plugin_Abstract
 		$channel = $explode[1];
 
 		$entry = $this->makeEntry($this->getConf('logger.format.quit'), array(
-			'{CHANNEL}' => $this->getEvent()->getSource(),
+			'{CHANNEL}' => $channel,
 			'{DATE}' => date($this->getConf('logger.format.date')),
 			'{NICK}' => $this->event->getNick()
 		));
@@ -61,7 +63,7 @@ class Phergie_Plugin_Logger extends Phergie_Plugin_Abstract
 	}
 
 	/**
-	 * When gets kicked.
+	 * When someone gets kicked.
 	 *
 	 * @return void
 	 */
@@ -77,6 +79,24 @@ class Phergie_Plugin_Logger extends Phergie_Plugin_Abstract
 	}
 
 	/**
+	 * When a notice is received
+	 *
+	 * @return void
+	 */
+	public function onNotice ()
+	{
+		$entry = $this->makeEntry($this->getConf('logger.format.notice'), array(
+			'{CHANNEL}' => $this->getEvent()->getSource(),
+			'{DATE}' => date($this->getConf('logger.format.date')),
+			'{MSG}' => $this->plugins->message->getMessage(),
+			'{NICK}' => $this->event->getNick()
+		));
+
+		$this->writeLog($this->getEvent()->getSource(), $entry);
+	}
+
+
+	/**
 	 * When the topic is viewed or changed
 	 *
 	 * @todo implement this
@@ -84,6 +104,22 @@ class Phergie_Plugin_Logger extends Phergie_Plugin_Abstract
 	 */
 	public function onTopic ()
 	{
+		$return = preg_match('/^TOPIC .+? :(.+)$/',
+			$this->getEvent()->getRawData(), $match);
+
+		if ($return === false)
+		{
+			return;
+		}
+
+		$entry = $this->makeEntry($this->getConf('logger.format.topic'), array(
+			'{CHANNEL}' => $this->getEvent()->getSource(),
+			'{DATE}' => date($this->getConf('logger.format.date')),
+			'{TOPIC}' => preg_replace('/^:/', '', $match[1]),
+			'{NICK}' => $this->event->getNick()
+		));
+
+		$this->writeLog($this->getEvent()->getSource(), $entry);
 	}
 
 	/**
