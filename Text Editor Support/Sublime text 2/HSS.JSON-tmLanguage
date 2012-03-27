@@ -1,0 +1,37 @@
+{	"name": "HSS",
+	"scopeName": "source.hss", 
+	"fileTypes": ["hss"], 
+	"patterns": [
+		{ "match": "\\@(click|mouseover|mouseout)",
+			"name": "event.hss",
+			"captures": {
+				"1": { "name": "keyword.event.hss" }
+			}
+		},
+
+		{ "match": "\\@([A-Za-z0-9_]+)",
+			"name": "object.hss",
+			"captures": {
+				"1": { "name": "variable.object.hss" }
+			}
+		},
+
+		{ "match": "#([A-Fa-f0-9]{1,6})",
+			"name": "constant.color.hss"
+		},
+
+		{ "match": "([0-9]+)%?",
+			"name": "constant.numeric.hss"
+		},
+
+		{ "match": "#(new)\\s([A-Za-z0-9_]+)",
+			"name": "instruction.hss",
+			"captures": {
+				"1": { "name": "keyword.instruction.hss" },
+				"2": { "name": "variable.instruction.hss" }
+			}
+		}
+
+	],
+	"uuid": "c83e74be-7081-4df8-bdf0-f0cb4db3b6f8"
+}
