@@ -166,6 +166,12 @@ class Phergie_Plugin_Logger extends Phergie_Plugin_Abstract
 	protected function writeLog ($channel, $entry)
 	{
 		$channel = str_replace('#', '', $channel);
+
+		if (empty(trim($channel)))
+		{
+			return;
+		}
+		
 		$fh = fopen($this->getLogFile($channel), 'a');
 		fwrite($fh, $entry . "\n");
 		fclose($fh);
