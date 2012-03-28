@@ -3,7 +3,6 @@
 /**
  * @author Ragnis Armus <ragnis.armus@gmail.com>
  * @license http://www.opensource.org/licenses/mit-license.html The MIT License
- * @todo Handle quitting
  */
 class Phergie_Plugin_Logger extends Phergie_Plugin_Abstract
 {
@@ -167,7 +166,7 @@ class Phergie_Plugin_Logger extends Phergie_Plugin_Abstract
 	{
 		$channel = str_replace('#', '', $channel);
 
-		if (empty(trim($channel)))
+		if (empty($channel))
 		{
 			return;
 		}
