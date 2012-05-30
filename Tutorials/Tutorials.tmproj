@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>000_tutorial_html/index.html</string>
+	<string>002_basics/basics4.xml</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -77,20 +77,6 @@
 				<integer>168</integer>
 			</dict>
 		</dict>
-		<key>002_basics/basics4.hss</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>22</integer>
-				<key>line</key>
-				<integer>7</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>002_basics/basics4.xml</key>
 		<dict>
 			<key>caret</key>
@@ -109,7 +95,6 @@
 	<key>openDocuments</key>
 	<array>
 		<string>000_tutorial_html/index.html</string>
-		<string>002_basics/basics4.hss</string>
 		<string>002_basics/basics4.xml</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
