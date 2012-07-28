@@ -1,0 +1,73 @@
+@container menuButton
+{
+    contentAlignY: middle;
+    font: menuFont;
+    height: 30;
+    
+    &@ subMenuButton
+    {
+        
+    }
+}
+
+@ menuSeparator
+{
+    height: 2;
+    alignY: bottom;
+    #new sh
+    {
+        height: 1;
+        background: #0001;
+    }
+    
+    #new hl
+    {
+        height: 1;
+        background: #FFF6;
+    }
+}
+
+@ menuGroup
+{
+    titleWrapper title { isA: sidebarTitle }
+    linkWrapper link {
+        isA: sidebarRow;
+    }
+}
+
+@ sidebarTitle
+{
+    font: sidebarTitleFont;
+    height: 35;
+    contentAlignY: middle;
+}
+
+@ sidebarRow
+{
+    font: sidebarRowFont;
+    shape: @{ ref(height) / 2 };
+    
+    @::hover
+    {
+        background: #0002;
+        border: @{ 1; #0003 }, @{ 1; #FFF1 };
+    }
+    
+    @::selected
+    {
+        font: sidebarRowFontSelected;
+    }
+}
+
+@ pane
+{
+    background: paneBg;
+    shape: @{5};
+    border: @{ 1; #F };
+}
+
+@ pathBar
+{
+    background: pathBarBg;
+    border: @{ 1; #f0f2f6 }, @{ 1; #b0b6bd }
+}

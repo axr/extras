@@ -1,0 +1,27 @@
+@request backToHome
+{
+    src: "pages/home.xml";
+    target: sel(@root content loadTarget);
+}
+
+* {
+    on: @load { backToHome };
+    
+    navigation
+    {
+        title
+        {
+            on: @click { backToHome, unflag(selected on @parent menu group linkWrapper link) };
+        }
+        
+        menu group linkWrapper link {
+            on: @click {
+                @request {
+                    src: attr(href);
+                    target: sel(@root content loadTarget);
+                },
+                unflag(selected on @parent @parent @parent group linkWrapper *), flag(selected)
+            }
+        }
+    }
+}

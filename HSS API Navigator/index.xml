@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="application/x-hss" src="style.hss" version="1.0" ?>
+<?xml-sitemap type="text/xml" src="sitemap.xml"?>
+<index>
+    <!-- <metadata xmlns="urn:vg.axr.metadata.1.0">
+        <title>API Navigator Index</title>
+        <author type="text/x-vcard" src="author.vcf">Miro Keller</author>
+        <description>This API Navigator shows documentation for HSS and its objects.</description>
+        <lastEdited year="2011" month="12" day="28" />
+    </metadata> -->
+	<title>HSS API</title>
+    <navigation>
+        <menu>
+			<group>
+				<title>TOPICS</title>
+				<link href="pages/news.xml">News</link>
+				<link href="pages/objects.xml">Objects</link>
+            </group>
+			<group>
+				<title>OBJECTS</title>
+				<link href="pages/object.xml">@object</link>
+				<link href="pages/container.xml">@container</link>
+				<link href="pages/shapes.xml">Shapes</link>
+				<link href="pages/colors.xml">Colors</link>
+				<link href="pages/gradients.xml">Gradients</link>
+            </group>
+            <!-- <group>
+                <children>
+                    <group>
+                        <link href="object.xml" abstract="yes">@object</link>
+                        <children>
+                            <group>
+                                <link href="displayObject.xml">@displayObject</link>
+                                <children>
+                                    <link href="container.xml">@container</link>
+                                    <link href="textBlock.xml">@textBlock</link>
+                                    <link href="image.xml">@image</link>
+                                    <link href="imageFamily.xml">@imageFamily</link>
+                                    <link href="video.xml">@video</link>
+                                    <link href="blob.xml">@blob</link>
+                                </children>
+                            </group>
+                            <link href="box.xml">@box</link>
+                            <group>
+                                <link href="shape.xml" abstract="yes">@shape</link>
+                                <children>
+                                    <link href="rect.xml">@rectangle</link>
+                                    <link href="circle.xml">@circle</link>
+                                    <link href="polygon.xml">@polygon</link>
+                                    <link href="star.xml">@star</link>
+                                </children>
+                            </group>
+                            <link href="path.xml">@path</link>
+                            <group>
+                                <link href="pathSegment.xml" abstract="yes">@pathSegment</link>
+                                <children>
+                                    <link href="line.xml">@line</link>
+                                    <link href="arc.xml">@arc</link>
+                                    <link href="arcTangents.xml">@arcTangents</link>
+                                    <link href="curve.xml">@curve</link>
+                                    <link href="quadCurve.xml">@quadCurve</link>
+                                </children>
+                            </group>
+                        </children>
+                    </group>
+                </children>
+            </group> -->
+        </menu>
+    </navigation>
+</index>

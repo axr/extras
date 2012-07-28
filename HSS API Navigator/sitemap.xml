@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sitemap xmlns="urn:vg.axr.sitemap.1">
+	<metadata xmlns="urn:vg.axr.metadata.1">
+		<title>AXR Example 2</title>
+		<author type="text/x-vcard" src="author.vcf">Miro Keller</author>
+		<description>Example #2: basic page with navigation</description>
+		<lastEdited year="2011" month="11" day="3" />
+	</metadata>
+	<internal>
+		<home href="index.xml">Welcome</home>
+		<about href="about.xml">About</about>
+		<contact href="contact.xml">Contact</contact>
+		<footer href="footer.xml" />
+	</internal>
+	<external>
+		<link href="http://mirokeller.com">Author</link>
+	</external>
+</sitemap>

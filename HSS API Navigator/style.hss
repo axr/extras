@@ -1,0 +1,124 @@
+//import all needed styles
+#import "base.hss";
+#import "layout.hss";
+#import "colors.hss";
+#import "typography.hss";
+#import "shapes.hss";
+#import "navigation.hss";
+
+*{
+    background: bgColor, shadowBottom;
+    //#delete metadata;
+    
+    content
+    {
+        isA: pane;
+        
+        pathBar
+        {
+            isA: pathBar;
+            height: 40;
+        }
+        
+        loadTarget
+        {
+            padding: @{ left: 20; right: 20 };
+            
+            title
+            {
+                font: heading1Font;
+                padding: @{ bottom: 10 };
+            }
+            p
+            {
+                font: bodyFont;
+            }
+            
+            description
+            {
+                font: bodyFont;
+                margin: @{ bottom: 20 };
+            }
+            
+            properties
+            {
+                title
+                {
+                    font: heading2Font;
+                }
+                
+                prop
+                {
+                    padding: @{ top: 5; bottom: 5; };
+                    contentAlignX: left;
+                    
+                    name
+                    {
+                        width: 150;
+                        padding: 5;
+                        font: heading3Font;
+                    }
+                    
+                    values
+                    {
+                        width: 100% - ref(width of name);
+                        contentAlignX: left;
+                        
+                        value
+                        {
+                            width: 100;
+                            padding: @{ top: 5; bottom: 5; };
+                            font: bodyFont;
+                        }
+                    }
+                    
+                }
+                
+                
+            }
+            
+        }
+    }
+    
+    navigation
+    {
+        background: sidePaneBg;
+        
+        title
+        {
+            background: bgColor;
+            font: heading1Font;
+            textAlign: center;
+            
+            @::hover
+            {
+               font: heading1FontHover; 
+            }
+            
+            #new shadow
+            {
+                height: 10;
+                alignY: bottom;
+                flow: no;
+                background: shadowBottom;
+            }
+        }
+        
+        #new navigationShadow
+        {
+            width: 10;
+            height: 100%;
+            background: shadowLeft;
+            alignX: right;
+            flow: no;
+        }
+        
+        menu
+        {
+            group
+            {
+                isA: menuGroup;
+            }
+        }
+    }
+}

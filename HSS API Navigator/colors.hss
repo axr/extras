@@ -1,0 +1,44 @@
+#313539 bgColor;
+#E bgColorLighter1;
+#F5 bgColorLighter2;
+#F bgColorLighter3;
+#B bgColorDarker;
+#F fgColor;
+#7e838c fgColorDark;
+#4C5159 sidePaneBg;
+// 
+// @linearGradient sidePaneBg {
+//     startColor: bgColor;
+//     endColor: bgColorLighter2;
+//     startX: 0;
+//     endX: 100%;
+//     endY: 0;
+//     colorStops: #E, bgColorLighter2;
+// }
+
+#F7F8FA paneBg;
+
+@linearGradient shadowRight {
+    endX: 10;
+    startColor: @{ alpha: 15% };
+    endColor: #0000;
+    
+    &@ shadowLeft { endX: 0; startX: 10; }
+    &@ shadowBottom { endX: 0; endY: 0; startY: 10; }
+}
+
+@linearGradient buttonGradient
+{
+    endY: 100%;
+    startColor: bgColorLighter3;
+    endColor: bgColor;
+    colorStops: @{ bgColorLighter; 50% }, @{ bgColorLighter2; 50% };
+}
+
+@linearGradient pathBarBg
+{
+    endY: 100%;
+    startColor: #f0f2f6;
+    colorStops: @{ #eaedf2; 45% }, @{ #e8ebf1; 50% };
+    endColor: #d8dee7;
+}

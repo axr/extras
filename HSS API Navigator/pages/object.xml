@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object xmlns="urn:vg.axr.api">
+	<title>@object</title>
+	<description>This is the base object all other objects inherit from. It cannot be used directly, though.</description>
+	<properties>
+		<title>Properties</title>
+		<prop>
+			<name>isA</name>
+			<values>
+				<value default="true">no</value>
+				<value>object name constant</value>
+			</values>
+		</prop>
+	</properties>
+</object>

@@ -1,0 +1,69 @@
+*{
+    #new content
+    {
+        width: 100% - ref(width of navigation);
+        height: 100%;
+        alignX: 100% - 20;
+        anchorX: 100%;
+        alignY: middle;
+        
+        #new pathBar
+        {
+            height: 40;
+        }
+        
+        #new loadTarget
+        {
+            width: 100% - 60;
+            alignY: top;
+            margin: @{ top: 20; left: 30; right: 30; };
+        }
+    }
+    
+    navigation
+    {
+        width: 25%;
+        height: 100%;
+        alignX: 0;
+        alignY: bottom;
+        
+        #move title
+        {
+            height: 50;
+            alignX: left;
+            alignY: top;
+            contentAlignY: middle;
+        }
+        
+        menu
+        {
+            width: 100%;
+            height: 100% - 50;
+            alignY: bottom;
+            
+            group
+            {
+                #new titleWrapper
+                {
+                    width: 100% - 30;
+                    alignX: center;
+                    height: 55;
+                    contentAlignY: bottom;
+
+                    #move title {  }
+                }
+
+                #new linkWrapper
+                {
+                    #move link {
+                        width: 100% - 30;
+                        alignX: center;
+                        height: 25;
+                        contentAlignY: middle;
+                        padding: @{ left: 20; right: 20 };
+                    }
+                }
+            }
+        }
+    }
+}

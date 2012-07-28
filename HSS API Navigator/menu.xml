@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns="urn:vg.axr.sitemap.1">
+	<metadata xmlns="urn:vg.axr.metadata.1">
+		<title>Menu of the API Navigator</title>
+		<author type="text/x-vcard" src="author.vcf">Miro Keller</author>
+		<description>Example #2: basic page with navigation</description>
+		<lastEdited year="2011" month="12" day="28" />
+	</metadata>
+	
+	<home href="index.xml">Home</home>
+	<hssSyntax href="hssSyntax.xml">The Syntax of HSS</hssSyntax>
+	<objects href="objects.xml">
+		Objects
+		<object>
+			<displayObject>
+				<container/>
+				<textBlock/>
+				<image/>
+				<imageFamily/>
+				<video/>
+				<blob/>
+			</displayObject>
+			<box />
+			<shape>
+				<rect/>
+				<circle/>
+				<polygon/>
+				<star/>
+			</shape>
+			<path/>
+			<pathSegment>
+				<line/>
+				<arc/>
+				<arcTangents/>
+				<curve/>
+				<quadCurve/>
+			</pathSegment>
+		</object>
+	</objects>
+</menu>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="urn:vg.axr.api">
+	<title>@container</title>
+	<description>Elements in the XML will automatically be converted to @container objects once parsed.</description>
+	<properties>
+		<prop>
+			<name>anchorX</name>
+			<values>
+				<value default="true">no</value>
+				<value>number</value>
+			</values>
+		</prop>
+		<prop>
+			<name>anchorY</name>
+			<values>
+				<value default="true">no</value>
+				<value>number</value>
+			</values>
+		</prop>
+		<prop>
+			<name>alignX</name>
+			<values>
+				<value default="true">auto</value>
+				<value>left</value>
+				<value>right</value>
+				<value>center/middle</value>
+				<value>justify</value>
+				<value>even</value>
+				<value>number</value>
+			</values>
+		</prop>
+	</properties>
+</container>

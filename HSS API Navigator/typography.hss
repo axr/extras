@@ -1,0 +1,29 @@
+@font bodyFont
+{
+    face: "Aller";
+    color: fgColorDark;
+    size: 15;
+    
+    &@ headingFont
+    {
+        weight: bold;
+        &@ heading1Font { size: 20; &@ heading1FontHover { color: fgColor; } }
+        
+        &@ heading2Font { size: 18 }
+        &@ heading3Font { size: 16 }
+        
+        &@ sidebarRowFont { size: 12; color: #acb2bf; &@ sidebarRowFontSelected { color: fgColor } }
+    }
+    
+    &@ menuFont {
+        &@ menuFontHover { color: #0 }
+        &@ menuGroupFont { }
+        
+    }
+    
+    &@ bodyFontBold
+    {
+        weight: bold;
+        &@ sidebarTitleFont { size: 13; }
+    }
+}
