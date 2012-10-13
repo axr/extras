@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<?xml-stylesheet type="application/x-hss" src="style.hss" version="1.0" ?>
+<?xml-stylesheet type="application/x-hss" href="style.hss" version="1.0" ?>
 <?xml-sitemap type="text/xml" src="sitemap.xml"?>
 <index>
     <!-- <metadata xmlns="urn:vg.axr.metadata.1.0">

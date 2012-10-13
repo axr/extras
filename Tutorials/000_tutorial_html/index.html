@@ -39,13 +39,13 @@
 			<h3>3.2 Style sheets</h3>
 			<p>Now, let's style it up a bit. For that, we need to add a line to the XML file that will determine how to find the stylesheet that will contain the instructions on how to represent the content of the XML file:</p>
 			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;?xml-stylesheet src=&quot;style.hss&quot; type=&quot;application/x-hss&quot; version=&quot;1.0&quot;?&gt;
+&lt;?xml-stylesheet href=&quot;style.hss&quot; type=&quot;application/x-hss&quot; version=&quot;1.0&quot;?&gt;
 &lt;example&gt;Hello world&lt;/example&gt;</pre>
 			<p>Here's what we added:</p>
-			<pre>&lt;?xml-stylesheet src=&quot;style.hss&quot; type=&quot;application/x-hss&quot; version=&quot;1.0&quot;?&gt;</pre>
-			<p>This line is a so called <em>XML instruction</em>, and the instruction name is <code>xml-stylesheet</code>. It's arguments, <code>src</code>, <code>type</code> and <code>version</code> can come in any order.</p>
+			<pre>&lt;?xml-stylesheet href=&quot;style.hss&quot; type=&quot;application/x-hss&quot; version=&quot;1.0&quot;?&gt;</pre>
+			<p>This line is a so called <em>XML instruction</em>, and the instruction name is <code>xml-stylesheet</code>. It's arguments, <code>href</code>, <code>type</code> and <code>version</code> can come in any order.</p>
 			<ul>
-				<li><p><code>src</code> is the location of the HSS file relatively to the XML file. No absolute paths or URLs are supported yet in the prototype.</p></li>
+				<li><p><code>href</code> is the location of the HSS file relatively to the XML file. No absolute paths or URLs are supported yet in the prototype.</p></li>
 				<li><p><code>type</code> is the MIME type of the stylesheet. In this case, we are using <code>application/x-hss</code>, because it is not an official standard yet, and MIME rules state that you have to use the <code>x-</code> prefix for non-standard types. In the future, this may end up being <code>application/hss</code> or even <code>text/hss</code>.</p></li>
 				<li><p>Last, but not least, it is always required that you declare the <code>version</code> of the AXR platform that you are targeting. In case that the syntax changes in the future, backwards compatibility modules will be able to render old documents correctly, becaue they will know what you meant in the first place. So, for now, we will always be using <code>1.0</code>, at least until the first official version has been completed and released.</p></li>
 			</ul>
@@ -100,7 +100,7 @@
 			<h3>4.1 Selectors</h3>
 			<p><em>Selectors</em> point to the <em>elements</em> in your XML file, to tell the rendering engine which properties to apply to which object. Create a new text file <code>/basics.xml</code> and type the following:</p>
 			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;?xml-stylesheet src=&quot;basics.hss&quot; type=&quot;application/x-hss&quot; version=&quot;1.0&quot;?&gt;
+&lt;?xml-stylesheet href=&quot;basics.hss&quot; type=&quot;application/x-hss&quot; version=&quot;1.0&quot;?&gt;
 &lt;example&gt;
 	&lt;sibling&gt;Element A&lt;/sibling&gt;
 	&lt;sibling&gt;Element B&lt;/sibling&gt;
