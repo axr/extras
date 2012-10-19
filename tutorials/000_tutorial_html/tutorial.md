@@ -50,6 +50,7 @@ it, write this:
 	<hello>Hello world</hello>
 
 Done! Now, open it in the prototype, and you'll see something like this:
+
 ![Prototype showing Hello world](img/1001.jpg)
 
 Let's go over each line:
@@ -113,6 +114,7 @@ this:
 
 Go back to the prototype, hit refresh (cmd+R on the Mac, ctrl+R or F5 on Windows
 and Linux), and you should get something like this:
+
 ![Prototype showing styled up Hello world](img/1002.jpg)
 
 Let's go over each part:
@@ -177,6 +179,7 @@ The entire file `/style.hss` now looks like this:
 	}
 
 If you reload in the prototype, you should get something like this:
+
 ![Prototype showing the final Hello world example](img/1003.jpg)
 
 You can recognize a HSS object by the `@`, which is called the object sign. Its
@@ -187,7 +190,7 @@ we are defining a `@font` object, which is the default object type for the
 
 If you didn't fully understand what's going on, don't worry. It will become much
 clearer as we dive into the full syntax of objects and how to use them.
-		
+
 The basics
 ----------
 
@@ -219,6 +222,7 @@ and that what's inside the block applies a gray background. The difference is
 that instead of targeting the root element with its name, we are using the
 universal selector, the star `*`. Open the `/basics.xml` file with the prototype
 and you should see something like the following:
+
 ![The whole window is filled with gray, plus some basic text](img/2001.jpg)
 
 ### Scope and nesting
@@ -253,6 +257,7 @@ Change your `/basics.hss` file to look like this:
 	}
 
 Reload the file and you should see something like this:
+
 ![The children are squares and placed next to each other](img/2002.jpg)
 
 Here's what we added:
@@ -296,18 +301,22 @@ tall as their content when left to their default values.
 
 Let's experiment a bit: Change the width to 50%. Now your document should look
 like this:
+
 ![The columns take up the entire width of the window](img/2003.jpg)
 
 Now we want to make them as tall as the window, so we set the height to 100%.
+
 ![The columns take up the entire height of the window](img/2004.jpg)
 
 Maybe not completely as tall as the window. Make it 100% - 30. If you resize the
 window you'll see that the empty space at the top and bottom will always be 15
 points each.
+
 ![There is a 15 points gap at the top and at the bottom](img/2005.jpg)
 
 Just to brag, now, we're going to take it a bit to extreme! Make the width
 `(100% - (10% + 5))/2`:
+
 ![It works! - There is now a gap at each side, too.](img/2006.jpg)
 
 OK, this is probably overdoing it :) But this is just to show that you can use
@@ -323,9 +332,11 @@ the horizontal axis is already `50%`, that's why we didn't need to use `alignX`
 or `contentAlignX` on its parent to have it aligned in the middle horizontally.
 
 If we change this to `top` or `0`, you'll see it sticks to the top:
+
 ![The elements are top aligned](img/2007.jpg)
 
 If we set it to `bottom` or `100%`, it will got to the bottom:
+
 ![The elements are bottom aligned](img/2008.jpg)
 
 Intermediate values are possible, as well. But before we do that, we first need
