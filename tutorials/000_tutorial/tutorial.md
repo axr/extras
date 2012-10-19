@@ -76,7 +76,7 @@ that will determine how to find the stylesheet that will contain the
 instructions on how to represent the content of the XML file:
 
 	<?xml version="1.0" encoding="UTF-8"?>
-	<?xml-stylesheet href="style.hss" type="application/x-hss" version="1.0"?>
+	<?xml-stylesheet href="style.hss" type="application/x-hss" version="0.4.7" ?>
 	<example>Hello world</example>
 
 Here's what we added:
@@ -98,9 +98,7 @@ order.
 - Last, but not least, it is always required that you declare the `version` of
 the AXR platform that you are targeting. In case that the syntax changes in the
 future, backwards compatibility modules will be able to render old documents
-correctly, becaue they will know what you meant in the first place. So, for now,
-we will always be using `1.0`, at least until the first official version has
-been completed and released.
+correctly, becaue they will know what you meant in the first place.
 
 Now, with your favorite text editor, create a new file `/style.hss`, and type
 this:
