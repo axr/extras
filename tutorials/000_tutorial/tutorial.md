@@ -333,7 +333,7 @@ If we change this to `top` or `0`, you'll see it sticks to the top:
 
 ![The elements are top aligned](img/2007.jpg)
 
-If we set it to `bottom` or `100%`, it will got to the bottom:
+If we set it to `bottom` or `100%`, it will go to the bottom:
 
 ![The elements are bottom aligned](img/2008.jpg)
 
