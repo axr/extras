@@ -259,6 +259,7 @@ Change your `/basics.hss` file to look like this:
 		{
 			width: 100;
 			height: 100;
+			alignX: center;
 			alignY: middle;
 			contentAlignY: middle;
 			textAlign: center;
@@ -280,6 +281,7 @@ Here's what we added:
 	{
 		width: 100;
 		height: 100;
+		alignX: center;
 		alignY: middle;
 		contentAlignY: middle;
 		textAlign: center;
@@ -336,16 +338,16 @@ Just to brag, now, we're going to take it a bit to extreme! Make the width
 OK, this is probably overdoing it :) But this is just to show that you can use
 more complicated expressions without problems.
 
-Let's go back to `width: 100; height: 100;` and then look at the next line:
+Let's go back to `width: 100; height: 100;` and then look at the next lines:
 
+	alignX: center;
 	alignY: middle;
 
-Here we are setting the alignment point in the vertical axis to the keyword
-`middle`, which will be automatically converted to `50%`. The default value for
-the horizontal axis is already `50%`, that's why we didn't need to use `alignX`
-or `contentAlignX` on its parent to have it aligned in the middle horizontally.
+Here we are setting the alignment point in the horizontal axis to the keyword
+`center` and in the vertical axis to `middle`, both of which will be automatically
+converted to `50%`.
 
-If we change this to `top` or `0`, you'll see it sticks to the top:
+If we change the `alignY` to `top` or `0`, you'll see it sticks to the top:
 
 ![The elements are top aligned](img/2007.jpg)
 
@@ -353,8 +355,65 @@ If we set it to `bottom` or `100%`, it will go to the bottom:
 
 ![The elements are bottom aligned](img/2008.jpg)
 
-Intermediate values are possible, as well. But before we do that, we first need
-to understand the concept of anchor point. Each object in our document has a
-point wich will be the reference used when positioning it on the alignment
-point. By default, `anchorX` and `anchorY` are `50%` of their width and height,
-respectively.
+Intermediate values are possible, as well, of course. Apart from the keywords,
+you can use percentages and plain numbers. Percentages refer to the inner
+dimensions of the containing object, which means the size minus the paddings.
+
+Experiment with the dimensions and alignment and then go back to the original
+values. Then, let's have a look at the next lines:
+
+	contentAlignY: middle;
+	textAlign: center;
+
+This is to center the content text inside each of the elements. The text object
+is placed at the vertical center by means of layout, and the actual words are
+just centered like in a text editor.
+
+	background: #0003;
+
+In this case, we are defining the background color of the element, by using the
+`background` property and assigning it a hexadecimal color value. You'll
+probably know this kind of notation from programs such as Photoshop or similar.
+
+You may be wondering, why does `#0003` give a gray color? For that, let's study
+all the different options we have when defining a color with hexadecimal notation.
+After the "hash sign" comes values for the different channels that compose a color:
+
+- 1 digit: Grayscale, with 16 possible values of lightness.
+- 2 digits: Grayscale too, but with two digit precision, allowing 256 values.
+- 3 digits: RGB, with one digit per channel.
+- 4 digits: RGBA, like the last one, but with an Alpha channel too. Therefore, the
+fourth digit is transparency.
+- 5 digits: RGBAA, one digit per channel for the color, two digits for the alpha.
+- 6 digits: RRGGBB, two digits per channel, opaque.
+- 7 digits: RRGGBBA, to digits per channel with one digit alpha.
+- 8 digits: RRGGBBAA, the full blown one, with two digits per channel for the color
+and the transparency too.
+
+Therefore, we can conclude that what we are seeing is actually not gray, but black
+(`#000`), with the value `3` for transparency.
+
+Finally, the border:
+
+	border: @{
+		size: 1;
+		color: #7;
+	};
+
+See the `@` there? It indicates that what we are using is an HSS object. In this
+case, we have omitted the object type, because we are using the default type for
+the border property, which is `@lineBorder` (FIXME). Therefore, the following
+would be absolutely equivalent:
+
+	border: @lineBorder {
+		size: 1;
+		color: #7;
+	};
+
+But since it's quite redundant, and the default type fits our needs, we just skip
+it. Inside of the block, we are defining the border to be 1 unit wide and of dark
+gray color.
+
+Experiment a bit with the properties we have learned in this section until you are
+satisfied, and then let's move on to build something prettier :)
+
