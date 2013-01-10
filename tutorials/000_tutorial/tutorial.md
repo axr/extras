@@ -67,7 +67,7 @@ it, write this:
 
 Done! Now, open it in the prototype, and you'll see something like this:
 
-![Prototype showing Hello world](img/1001.jpg)
+![Prototype showing Hello world](img/1001.jpg?raw=1)
 
 Let's go over each line:
 
@@ -130,7 +130,7 @@ this:
 Go back to the prototype, hit refresh (cmd+R on the Mac, ctrl+R or F5 on Windows
 and Linux), and you should get something like this:
 
-![Prototype showing styled up Hello world](img/1002.jpg)
+![Prototype showing styled up Hello world](img/1002.jpg?raw=1)
 
 Let's go over each part:
 
@@ -195,7 +195,7 @@ The entire file `/style.hss` now looks like this:
 
 If you reload in the prototype, you should get something like this:
 
-![Prototype showing the final Hello world example](img/1003.jpg)
+![Prototype showing the final Hello world example](img/1003.jpg?raw=1)
 
 You can recognize a HSS object by the `@`, which is called the object sign. Its
 block contains property definitions, like normal rules do. In this concrete
@@ -238,7 +238,7 @@ that instead of targeting the root element with its name, we are using the
 universal selector, the star `*`. Open the `/basics.xml` file with the prototype
 and you should see something like the following:
 
-![The whole window is filled with gray, plus some basic text](img/2001.jpg)
+![The whole window is filled with gray, plus some basic text](img/2001.jpg?raw=1)
 
 ### Scope and nesting
 If you are familiar with CSS, you may think that this applies to all elements in
@@ -274,7 +274,7 @@ Change your `/basics.hss` file to look like this:
 
 Reload the file and you should see something like this:
 
-![The children are squares and placed next to each other](img/2002.jpg)
+![The children are squares and placed next to each other](img/2002.jpg?raw=1)
 
 Here's what we added:
 
@@ -319,22 +319,22 @@ tall as their content when left to their default values.
 Let's experiment a bit: Change the width to 50%. Now your document should look
 like this:
 
-![The columns take up the entire width of the window](img/2003.jpg)
+![The columns take up the entire width of the window](img/2003.jpg?raw=1)
 
 Now we want to make them as tall as the window, so we set the height to 100%.
 
-![The columns take up the entire height of the window](img/2004.jpg)
+![The columns take up the entire height of the window](img/2004.jpg?raw=1)
 
 Maybe not completely as tall as the window. Make it 100% - 30. If you resize the
 window you'll see that the empty space at the top and bottom will always be 15
 points each.
 
-![There is a 15 points gap at the top and at the bottom](img/2005.jpg)
+![There is a 15 points gap at the top and at the bottom](img/2005.jpg?raw=1)
 
 Just to brag, now, we're going to take it a bit to extreme! Make the width
 `(100% - (10% + 5))/2`:
 
-![It works! - There is now a gap at each side, too.](img/2006.jpg)
+![It works! - There is now a gap at each side, too.](img/2006.jpg?raw=1)
 
 OK, this is probably overdoing it :) But this is just to show that you can use
 more complicated expressions without problems.
@@ -350,11 +350,11 @@ converted to `50%`.
 
 If we change the `alignY` to `top` or `0`, you'll see it sticks to the top:
 
-![The elements are top aligned](img/2007.jpg)
+![The elements are top aligned](img/2007.jpg?raw=1)
 
 If we set it to `bottom` or `100%`, it will go to the bottom:
 
-![The elements are bottom aligned](img/2008.jpg)
+![The elements are bottom aligned](img/2008.jpg?raw=1)
 
 Intermediate values are possible, as well, of course. Apart from the keywords,
 you can use percentages and plain numbers. Percentages refer to the inner
@@ -445,7 +445,7 @@ As a reminder, we are targeting the root element with the universal selector `*`
 and since at the base level only this one is in scope, it will be the only element
 selected. You'll see the document with a gray background:
 
-![The starting point: basic text with gray background](img/3001.jpg)
+![The starting point: basic text with gray background](img/3001.jpg?raw=1)
 
 ### Basic styling
 
@@ -473,7 +473,7 @@ Now, let's give the button some basic dimensions and some rudimentary styles:
 
 You'll see something like this:
 
-![The button is now yello and centered in the window](img/3002.jpg)
+![The button is now yello and centered in the window](img/3002.jpg?raw=1)
 
 Let's go over the property definitions and see what they do. Here we are setting the
 basic dimensions of the element, and aligning it in the center of the page:
@@ -704,7 +704,7 @@ Now we just need to apply the gradient on top of the background color:
 
 We get something that looks like this:
 
-![The button is now glossy](img/3003.jpg)
+![The button is now glossy](img/3003.jpg?raw=1)
 
 The full code is now:
 
@@ -764,7 +764,7 @@ object type and shorthand notation to cut it down. The following is equivalent:
 
 It will look like this:
 
-![With rounded corners](img/3004.jpg)
+![With rounded corners](img/3004.jpg?raw=1)
 
 Now this still looks quite flat, let's add some borders to create a bevel
 effect. First we define the colors:
@@ -787,7 +787,7 @@ Then, we define the borders, directly on the `fancyButton` object definition:
 This adds to thin borders to the inside of the shape. It will now look
 something like this:
 
-![Now with borders, too](img/3005.jpg)
+![Now with borders, too](img/3005.jpg?raw=1)
 
 To add even more, let's make something that looks sort of like a drop
 shadow. Add one more border after the other two, this time to the outside
@@ -861,7 +861,7 @@ The entire code now looks like this:
 
 The result:
 
-![With a soft shadow effect](img/3006.jpg)
+![With a soft shadow effect](img/3006.jpg?raw=1)
 
 ### Hover state
 
@@ -882,7 +882,7 @@ following after the rule that targets `link`:
 
 Now when you place your mouse cursor over the button, it will look like this:
 
-![On hover, a slightly brighter yellow](img/3007.jpg)
+![On hover, a slightly brighter yellow](img/3007.jpg?raw=1)
 
 You may not be able to see the difference right here on the screenshot, but it
 is immediately visible when seeing it live.
