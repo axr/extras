@@ -177,16 +177,31 @@ You may be wondering, why does `#0003` give a gray color? For that, let's study
 all the different options we have when defining a color with hexadecimal notation.
 After the "hash sign" comes values for the different channels that compose a color:
 
-- 1 digit: Grayscale, with 16 possible values of lightness.
-- 2 digits: Grayscale too, but with two digit precision, allowing 256 values.
-- 3 digits: RGB, with one digit per channel.
-- 4 digits: RGBA, like the last one, but with an Alpha channel too. Therefore, the
-fourth digit is transparency.
-- 5 digits: RGBAA, one digit per channel for the color, two digits for the alpha.
-- 6 digits: RRGGBB, two digits per channel, opaque.
-- 7 digits: RRGGBBA, to digits per channel with one digit alpha.
-- 8 digits: RRGGBBAA, the full blown one, with two digits per channel for the color
-and the transparency too.
+	// 1 digit: Grayscale, with 16 possible values of lightness.
+	#E
+	
+	// 2 digits: Grayscale too, but with two digit precision, allowing 256 values.
+	#EE
+
+	// 3 digits: RGB, with one digit per channel.
+	#AED
+
+	// 4 digits: RGBA, like the last one, but with an Alpha channel too. Therefore,
+	// the fourth digit is transparency.
+	#FFF1
+
+	// 5 digits: RGBAA, one digit per channel for the color, two digits for the alpha.
+	#FFF05
+
+	// 6 digits: RRGGBB, two digits per channel, opaque.
+	#AAEEDD
+
+	// 7 digits: RRGGBBA, to digits per channel with one digit alpha.
+	#AAEEDD8
+
+	// 8 digits: RRGGBBAA, the full blown one, with two digits per channel for the
+	color and the transparency too.
+	#AAEEDD88
 
 Therefore, we can conclude that what we are seeing is actually not gray, but black
 (`#000`), with the value `3` for transparency.
