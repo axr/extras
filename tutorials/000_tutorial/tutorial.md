@@ -1,5 +1,12 @@
-Introduction
-------------
+Table of Contents
+-----------------
+- [Introduction](#introduction)
+- [Set up](#setup)
+- [Hello world](#hello-world)
+- [The basics](#the-basics)
+
+<a name="introduction"></a>Introduction
+-------------------------------------
 HSS is the design language that powers the presentational side of a document
 written for the AXR platform. Its syntax is inspired in CSS, but it takes the
 concept to a whole new level, providing many new features that enable newfound
@@ -10,8 +17,8 @@ idea started as a small superset of CSS, but it became clear to the author that
 a fresh start would be required because the burden of legacy compatibility was
 too high to create a really great language. Thus, the AXR Project was started.
 
-Set-up of the environment
--------------------------
+<a name="setup"></a>Set-up of the environment
+--------------------------------------------
 At the time of writing this tutorial, the prototype rendering engine is capable
 of handling all the concepts we are going to explore, but it is not available as
 a browser plug-in, yet. Thus, you need to download the test browser app for your
@@ -45,8 +52,8 @@ Configure your text editor to use the UTF-8 encoding, either at the time of the
 file creation or in a setting in your application's settings. This encoding is
 the official recommended one to use.
 
-Hello world
------------
+<a name="hello-world"></a>Hello world
+------------------------------------
 The first thing we'll do, to follow the tradition of all programming languages,
 is creating the most basic document possible, which gives a basic output.
 
@@ -198,8 +205,8 @@ we are defining a `@font` object, which is the default object type for the
 If you didn't fully understand what's going on, don't worry. It will become much
 clearer as we dive into the full syntax of objects and how to use them.
 
-The basics
-----------
+<a name="the-basics"></a>The basics
+----------------------------------
 
 ### Selectors
 Selectors point to the elements in your XML file, to tell the rendering engine
