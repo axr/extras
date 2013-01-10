@@ -30,9 +30,10 @@ appropriate version of the AXR Browser for your operating system. If that
 for whatever reason doesn't work, you can go directly to the 
 [downloads page](http://axr.vg/downloads/) and get it from there.
 
-Once you've downloaded it, extract the files, in the case of Windows or Linux,
-or mount the DMG and drag to the Applications folder, in case of Mac OSX. Then,
-open the AXR Browser application.
+Once you've downloaded it, if you are on Windows, run the installer; on Linux,
+install the appropriate package for your distro or extract the TGZ if your OS uses
+a different package management system; or, in case of Mac OSX, mount the DMG and drag
+to the Applications folder. Then, open the AXR Browser application.
 
 Next, you should create a folder somewhere you can remember, and create the text
 files that we are going to discuss in these tutorials. The best way is to
