@@ -28,7 +28,7 @@ To do so, point your favorite browser to the [AXR Project's website](http://axr.
 and click on the big download button over there. This should download the
 appropriate version of the AXR Browser for your operating system. If that
 for whatever reason doesn't work, you can go directly to the 
-downloads page](http://axr.vg/downloads/) and get it from there.
+[downloads page](http://axr.vg/downloads/) and get it from there.
 
 Once you've downloaded it, extract the files, in the case of Windows or Linux,
 or mount the DMG and drag to the Applications folder, in case of Mac OSX. Then,
