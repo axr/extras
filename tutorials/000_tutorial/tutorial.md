@@ -7,7 +7,7 @@ Table of Contents
 - [A fancy button](#a-fancy-button)
 
 <a name="introduction"></a>Introduction
--------------------------------------
+---------------------------------------
 HSS is the design language that powers the presentational side of a document
 written for the AXR platform. Its syntax is inspired in CSS, but it takes the
 concept to a whole new level, providing many new features that enable newfound
@@ -19,7 +19,7 @@ a fresh start would be required because the burden of legacy compatibility was
 too high to create a really great language. Thus, the AXR Project was started.
 
 <a name="setup"></a>Set-up of the environment
---------------------------------------------
+---------------------------------------------
 At the time of writing this tutorial, the prototype rendering engine is capable
 of handling all the concepts we are going to explore, but it is not available as
 a browser plug-in, yet. Thus, you need to download the test browser app for your
@@ -54,7 +54,7 @@ file creation or in a setting in your application's settings. This encoding is
 the official recommended one to use.
 
 <a name="hello-world"></a>Hello world
-------------------------------------
+-------------------------------------
 The first thing we'll do, to follow the tradition of all programming languages,
 is creating the most basic document possible, which gives a basic output.
 
@@ -207,7 +207,7 @@ If you didn't fully understand what's going on, don't worry. It will become much
 clearer as we dive into the full syntax of objects and how to use them.
 
 <a name="the-basics"></a>The basics
-----------------------------------
+-----------------------------------
 
 ### Selectors
 Selectors point to the elements in your XML file, to tell the rendering engine
@@ -419,7 +419,7 @@ Experiment a bit with the properties we have learned in this section until you a
 satisfied, and then let's move on to build something prettier :)
 
 <a name="a-fancy-button"></a>A fancy button
-------------------------------------------
+-------------------------------------------
 
 Ok let's do something a bit more advanced. We're going to create a button, with
 some different states.
