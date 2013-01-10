@@ -1,7 +1,7 @@
 Introduction
 ------------
 HSS is the design language that powers the presentational side of a document
-written for the AXR platform. It's syntax is inspired in CSS, but it takes the
+written for the AXR platform. Its syntax is inspired in CSS, but it takes the
 concept to a whole new level, providing many new features that enable newfound
 flexibility and power.
 
@@ -14,11 +14,19 @@ Set-up of the environment
 -------------------------
 At the time of writing this tutorial, the prototype rendering engine is capable
 of handling all the concepts we are going to explore, but it is not available as
-a browser plug-in, yet. Thus, you need to download the prototype for your
-specific platform from the [project page](http://axr.vg/), and open XML files
-located on your local computer.
+a browser plug-in, yet. Thus, you need to download the test browser app for your
+specific platform from the [project page](http://axr.vg/), and open XML and HSS
+files located on your local computer.
 
-//FIXME: add instructions on how to install the prototype
+To do so, point your favorite browser to the [AXR Project's website](http://axr.vg/)
+and click on the big download button over there. This should download the
+appropriate version of the AXR Browser for your operating system. If that
+for whatever reason doesn't work, you can go directly to the 
+downloads page](http://axr.vg/downloads/) and get it from there.
+
+Once you've downloaded it, extract the files, in the case of Windows or Linux,
+or mount the DMG and drag to the Applications folder, in case of Mac OSX. Then,
+open the AXR Browser application.
 
 Next, you should create a folder somewhere you can remember, and create the text
 files that we are going to discuss in these tutorials. The best way is to
@@ -40,7 +48,7 @@ the official recommended one to use.
 Hello world
 -----------
 The first thing we'll do, to follow the tradition of all programming languages,
-is creating the most basic file possible, which gives a basic output.
+is creating the most basic document possible, which gives a basic output.
 
 ### Let's rock!
 Open your favorite text editor, and create a new file `/hello_world.xml`. Inside
@@ -65,10 +73,11 @@ is what you should always use.
 	<hello>Hello world</hello>
 
 The only requirement for the XML file that the AXR platform imposes is that the
-XML document is well-formed (//FIXME: add link), and that means, among other
-things, that there must be one, and only one, root element that contains all the
-other elements. In this case our root element is called `hello`, and it contains
-just some content text, `Hello world`
+XML document is
+[well-formed](http://en.wikipedia.org/wiki/XML#Well-formedness_and_error-handling),
+and that means, among other things, that there must be one, and only one, root
+element that contains all the other elements. In this case our root element is
+called `hello`, and it contains just some content text, `Hello world`.
 
 ### Style sheets
 Now, let's style it up a bit. For that, we need to add a line to the XML file
@@ -76,15 +85,15 @@ that will determine how to find the stylesheet that will contain the
 instructions on how to represent the content of the XML file:
 
 	<?xml version="1.0" encoding="UTF-8"?>
-	<?xml-stylesheet href="style.hss" type="application/x-hss" version="0.4.7" ?>
-	<example>Hello world</example>
+	<?xml-stylesheet href="style.hss" type="application/x-hss" version="0.4.8" ?>
+	<hello>Hello world</hello>
 
 Here's what we added:
 
-	<?xml-stylesheet href="style.hss" type="application/x-hss" version="1.0"?>
+	<?xml-stylesheet href="style.hss" type="application/x-hss" version="0.4.8"?>
 
 This line is a so called XML instruction, and the instruction name is
-`xml-stylesheet`. It's arguments, `href`, `type` and `version` can come in any
+`xml-stylesheet`. Its arguments, `href`, `type` and `version` can come in any
 order.
 
 - `href` is the location of the HSS file relatively to the XML file. No absolute
@@ -103,7 +112,7 @@ correctly, becaue they will know what you meant in the first place.
 Now, with your favorite text editor, create a new file `/style.hss`, and type
 this:
 
-	example
+	hello
 	{
 		background: #ED;
 		textAlign: center;
@@ -117,9 +126,9 @@ and Linux), and you should get something like this:
 
 Let's go over each part:
 
-	example
+	hello
 	{
-		//more stuff here
+	
 	}
 
 This is what's called a rule. It begins with a selector, which points to an
@@ -134,7 +143,7 @@ more optional whitespace, and finally an end of statement (aka semicolon), which
 is optional when the property definition is the last thing in the rule.
 
 In this particular line, we are setting the `background` property of the
-`example` element to a light gray (in case, you haven't guessed it, `#ED`
+`hello` element to a light gray (in case, you haven't guessed it, `#ED`
 represents a color).
 
 	textAlign: center;
@@ -145,7 +154,7 @@ text processor.
 	contentAlignY: middle;
 
 And finally, here comes a small taste of the magic of HSS. How many times have
-you wanted to do this with CSS? You set the content of the `example` element to
+you wanted to do this with CSS? You set the content of the `hello` element to
 be vertically aligned to the middle, which is equivalent to `50%`. We'll get to
 it later in more detail, but for now, know that the root element will always be
 as wide and tall as the window.
@@ -164,7 +173,7 @@ block:
 
 The entire file `/style.hss` now looks like this:
 
-	example
+	hello
 	{
 		background: #ED;
 		textAlign: center;
