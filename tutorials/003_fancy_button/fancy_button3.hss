@@ -1,0 +1,29 @@
+#D mainBgColor;
+#FE2 buttonColorBase;
+#D90 buttonFontColor;
+
+@container fancyButton
+{
+    contentAlignY: middle;
+    background: buttonColorBase;
+    textAlign: center;
+    font: @font {
+        face: "Helvetica";
+        color: buttonFontColor;
+        weight: normal; //FIXME
+    };
+}
+
+*
+{
+    background: mainBgColor;
+
+    link
+    {
+        isA: fancyButton;
+        width: 150;
+        height: 60;
+        alignX: center;
+        alignY: middle;
+    }
+}

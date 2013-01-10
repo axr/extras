@@ -1,0 +1,20 @@
+*
+{
+    background: #D;
+
+    link
+    {
+        width: 150;
+        height: 60;
+        alignX: center;
+        alignY: middle;
+        contentAlignY: middle;
+        background: #FE2;
+        textAlign: center;
+        font: @font {
+            face: "Helvetica";
+            color: #D90;
+            weight: normal; //FIXME
+        };
+    }
+}
