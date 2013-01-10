@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="note.hss" type="application/x-hss" version="1.0"?>
-<note>
-	<to>Peter</to>
-	<from>James</from>
-	<subject>Reminder</subject>
-	<message>Please don’t forget to bring some wine...</message>
-</note>
