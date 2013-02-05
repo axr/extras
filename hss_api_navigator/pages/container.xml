@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<container xmlns="urn:vg.axr.api">
+<container xmlns="urn:org.axrproject.api">
 	<title>@container</title>
 	<description>Elements in the XML will automatically be converted to @container objects once parsed.</description>
 	<properties>

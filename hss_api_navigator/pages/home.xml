@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<home xmlns="urn:vg.axr.sitemap.1">
-	<!-- <metadata xmlns="urn:vg.axr.metadata.1">
+<home xmlns="urn:org.axrproject.sitemap.1">
+	<!-- <metadata xmlns="urn:org.axrproject.metadata.1">
 		<title>Welcome document of the API Navigator</title>
 		<author type="text/x-vcard" src="author.vcf">Miro Keller</author>
 		<lastEdited year="2011" month="12" day="28" />

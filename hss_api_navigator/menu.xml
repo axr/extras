@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<menu xmlns="urn:vg.axr.sitemap.1">
-	<metadata xmlns="urn:vg.axr.metadata.1">
+<menu xmlns="urn:org.axrproject.sitemap.1">
+	<metadata xmlns="urn:org.axrproject.metadata.1">
 		<title>Menu of the API Navigator</title>
 		<author type="text/x-vcard" src="author.vcf">Miro Keller</author>
 		<description>Example #2: basic page with navigation</description>

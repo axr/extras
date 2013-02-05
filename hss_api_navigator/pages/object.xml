@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<object xmlns="urn:vg.axr.api">
+<object xmlns="urn:org.axrproject.api">
 	<title>@object</title>
 	<description>This is the base object all other objects inherit from. It cannot be used directly, though.</description>
 	<properties>

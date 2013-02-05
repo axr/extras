@@ -21,14 +21,14 @@ too high to create a really great language. Thus, the AXR Project was started.
 At the time of writing this tutorial, the prototype rendering engine is capable
 of handling all the concepts we are going to explore, but it is not available as
 a browser plug-in, yet. Thus, you need to download the test browser app for your
-specific platform from the [project page](http://axr.vg/), and open XML and HSS
-files located on your local computer.
+specific platform from the [project page](http://axrproject.org/), and open XML
+and HSS files located on your local computer.
 
-To do so, point your favorite browser to the [AXR Project's website](http://axr.vg/)
+To do so, point your favorite browser to the [AXR Project's website](http://axrproject.org/)
 and click on the big download button over there. This should download the
 appropriate version of the AXR Browser for your operating system. If that
-for whatever reason doesn't work, you can go directly to the 
-[downloads page](http://axr.vg/downloads/) and get it from there.
+for whatever reason doesn't work, you can go directly to the
+[downloads page](http://axrproject.org/downloads/) and get it from there.
 
 Once you've downloaded it, if you are on Windows, run the installer; on Linux,
 install the appropriate package for your distro or extract the TGZ if your OS uses
@@ -73,9 +73,9 @@ Let's go over each line:
 	<?xml version="1.0" encoding="UTF-8" ?>
 
 This is an XML instruction that needs to be present in all XML files, as per the
-[specification](http://spec.axr.vg/). We declare the file to use the 1.0 version
-of the XML standard, and that our file is encoded in the UTF-8 encoding, which
-is what you should always use.
+[specification](http://spec.axrproject.org/). We declare the file to use the 1.0
+version of the XML standard, and that our file is encoded in the UTF-8 encoding,
+which is what you should always use.
 
 	<hello>Hello world</hello>
 
@@ -135,7 +135,7 @@ Let's go over each part:
 
 	hello
 	{
-	
+
 	}
 
 This is what's called a rule. It begins with a selector, which points to an

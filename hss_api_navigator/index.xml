@@ -2,7 +2,7 @@
 <?xml-stylesheet type="application/x-hss" href="style.hss" version="1.0" ?>
 <?xml-sitemap type="text/xml" src="sitemap.xml"?>
 <index>
-    <!-- <metadata xmlns="urn:vg.axr.metadata.1.0">
+    <!-- <metadata xmlns="urn:org.axrproject.metadata.1.0">
         <title>API Navigator Index</title>
         <author type="text/x-vcard" src="author.vcf">Miro Keller</author>
         <description>This API Navigator shows documentation for HSS and its objects.</description>

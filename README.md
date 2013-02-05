@@ -8,7 +8,7 @@ Extras
 ======
 This is the repository where we keep tools, and extras for the AXR project. This can be Code Completion and Syntax Highlighting for text editors. Basically anything that does not fit in the other repositorys. If you are in doubt, you can consult the wiki or contact the respository manager.
 
-For more infomation about available plugings and extras, see the wiki page here: http://axr.vg/wiki/Extras.
+For more infomation about available plugings and extras, see the wiki page here: http://wiki.axrproject.org/Extras.
 
 Repository manager
 ==================
