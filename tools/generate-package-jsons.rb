@@ -111,6 +111,10 @@ Dir.glob("#{options[:input]}/**/*") do |path|
     file_info[:arch] = "none"
   end
 
+  if (md["type"] == "deb" and md["arch"] == "all") or (md["type"] == "rpm" and md["arch"] == "noarch")
+    file_info[:arch] = "none"
+  end
+
   puts "Found package '#{package}' version '#{version}' for '#{file_info[:os]} #{file_info[:arch]}'"
 
   output[package] = output[package] || {}
